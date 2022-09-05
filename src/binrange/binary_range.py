@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import Union
 
 # We don't include complex numbers
-# in our Numeric data type for simiplicity's
+# in our Numeric data type for simplicity's
 # sake
 Numeric = Union[int, float]
 
