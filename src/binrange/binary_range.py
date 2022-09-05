@@ -46,7 +46,7 @@ class ValueRange:
 def build_tree(val_range: ValueRange, floor_range: Numeric) -> ValueRange:
     """
     Builds a binary tree partition starting from the val_range
-    value range root. The floor_range set the minimum range upon
+    value range root. The floor_range sets the minimum range upon
     reaching which we form a leaf and abandon the current branch.
 
     Returns a ValueRange object, representing a binary tree.
