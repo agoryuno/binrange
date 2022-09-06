@@ -1,6 +1,6 @@
-from .binary_range import _ValueRange as ValueRange
-from .binary_range import _walk as walk
-from .binary_range import _build_tree as build_tree
+from .binary_range import ValueRange
+from .binary_range import walk
+from .binary_range import build_tree
 
-version = "0.0.3.2"
+version = "0.0.3.3"
 
