@@ -9,7 +9,7 @@ from typing import Union, Callable
 Numeric = Union[int, float]
 
 @dataclass
-class ValueRange:
+class _ValueRange:
     minvalue: Numeric
     maxvalue: Numeric
         
@@ -43,7 +43,7 @@ class ValueRange:
     def __ge__(self, other: ValueRange):
         return self._range() >= other._range()
 
-def build_tree(val_range: ValueRange, floor_range: Numeric) -> ValueRange:
+def _build_tree(val_range: ValueRange, floor_range: Numeric) -> ValueRange:
     """
     Builds a binary tree partition starting from the val_range
     value range root. The floor_range sets the minimum range upon
@@ -65,7 +65,7 @@ def build_tree(val_range: ValueRange, floor_range: Numeric) -> ValueRange:
     return val_range
 
 
-def walk(val_range: ValueRange, fun: Callable[[ValueRange], bool]):
+def _walk(val_range: ValueRange, fun: Callable[[ValueRange], bool]):
     """
     Walks the binary tree starting at val_range ValueRange node.
 
