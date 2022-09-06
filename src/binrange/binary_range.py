@@ -49,7 +49,7 @@ def build_tree(val_range: ValueRange, floor_range: Numeric) -> ValueRange:
     value range root. The floor_range sets the minimum range upon
     reaching which we form a leaf and abandon the current branch.
 
-    Returns a ValueRange object, representing a binary tree.
+    Returns a ValueRange object representing a binary tree.
     """
 
     minval, maxval = val_range.minvalue, val_range.maxvalue
