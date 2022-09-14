@@ -13,6 +13,6 @@ tree = build_tree(ValueRange(0, 10e+9), 100e+3)
 
 A simple walk function is provided for traversing the tree top down. It accepts
 a callable as second argument. The callable receives the ValueRange at the current
-node and can stop the walk, preventing exploration of this node's descendants, 
-by returning False. Conversely, it should return True to continue down from the
+node and can stop the walk by returning False, thus preventing exploration of this 
+node's descendants. Conversely, it should return True to continue down from the
 current node.
