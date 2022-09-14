@@ -16,3 +16,19 @@ a callable as second argument. The callable receives the ValueRange at the curre
 node and can stop the walk by returning False, thus preventing exploration of this 
 node's descendants. Conversely, it should return True to continue down from the
 current node.
+
+Note that binary split are **not** made precisely in the middle of each range - the
+`build_tree` function favors "pretty" splits over precise ones. To this end it
+calculates the split point as:
+
+```
+ floors = ((maxval - minval) // 2) / floor_range
+ if floors < 1:
+    return val_range
+    
+ midval = minval + math.floor(floors)*floor_range
+```
+
+where `maxval` and `minval` are the ceiling and floor of the range being split,
+`floor_range` - the mininum range value (the second argument to `build_tree()`),
+`val_range` - the value range being split.
