@@ -17,7 +17,7 @@ node and can stop the walk by returning False, thus preventing exploration of th
 node's descendants. Conversely, it should return True to continue down from the
 current node.
 
-Note that binary split are **not** made precisely in the middle of each range - the
+Note that binary splits are **not** made precisely in the middle of each range - the
 `build_tree` function favors "pretty" splits over precise ones. To this end it
 calculates the split point as:
 
