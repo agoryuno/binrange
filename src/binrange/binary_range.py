@@ -8,13 +8,14 @@ from typing import Union, Callable
 # sake
 Numeric = Union[int, float]
 
+
 @dataclass
 class ValueRange:
     minvalue: Numeric
     maxvalue: Numeric
         
-    left : ValueRange = None
-    right : ValueRange = None
+    left: ValueRange = None
+    right: ValueRange = None
         
     def __iter__(self):
         yield self
@@ -42,6 +43,7 @@ class ValueRange:
     
     def __ge__(self, other: ValueRange):
         return self._range() >= other._range()
+
 
 def build_tree(val_range: ValueRange, floor_range: Numeric) -> ValueRange:
     """
@@ -71,7 +73,7 @@ def walk(val_range: ValueRange, fun: Callable[[ValueRange], bool]):
 
     The fun argument is a callable that can be used to terminate the walk
     by returning False. Since fun receives the current node when being called
-    it can be used to check some conditions, filter nodes, etc, using side effects.
+    it can be used to check some conditions, filter nodes, etc., using side effects.
     """
     if not fun(val_range):
         return
